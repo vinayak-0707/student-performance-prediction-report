@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="card">
+    <h1>Your Predicted Performance</h1>
+    <div class="result-badge {{ prediction }}">{{ prediction }}</div>
+    <p>{{ tip }}</p>
+    <a href="/">&larr; Try again</a>
+  </div>
+</body>
+</html>

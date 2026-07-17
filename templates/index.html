@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Performance Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="card">
+    <h1>🎓 Student Performance Predictor</h1>
+    <p>Enter your details below and the AI model will predict your likely performance.</p>
+
+    <form action="/predict" method="POST">
+      <label>Attendance percentage (0-100)</label>
+      <input type="number" name="attendance" min="0" max="100" required />
+
+      <label>Study hours per week (0-30)</label>
+      <input type="number" name="study_hours" min="0" max="30" required />
+
+      <label>Previous exam score average (0-100)</label>
+      <input type="number" name="previous_score" min="0" max="100" required />
+
+      <label>Assignment completion percentage (0-100)</label>
+      <input type="number" name="assignment_completion" min="0" max="100" required />
+
+      <label>Class participation rating (1-10)</label>
+      <input type="number" name="participation" min="1" max="10" required />
+
+      <button type="submit">Predict my performance</button>
+    </form>
+  </div>
+</body>
+</html>
