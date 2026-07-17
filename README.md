@@ -11,7 +11,7 @@ completion, and class participation.
 |---|---|
 | Name | [Vinayak Pandey]
 | Institution | [ABES INSTITUTE OF TECHNOLOGY/Dr. A.P.J. Abdul Kalam Technical University ] |
-| Submission Date | [16-07-2026] |
+| Submission Date | [17-07-2026] |
 
 ---
 
@@ -127,7 +127,58 @@ data (not written by hand) — `train_model.py` keeps it limited to 4
 questions deep (`max_depth=4`) so it stays simple enough to actually
 understand, rather than an unreadable maze of hundreds of rules.
 
-- **Model accuracy:**
- printed each time you run `train_model.py` — expect
+- **Model accuracy:** printed each time you run `train_model.py` — expect
   roughly 55-65% on 4-class prediction (versus 25% for random guessing),
-  which is reasonable given only 5 simple input factors
+  which is reasonable given only 5 simple input factors.
+
+## 📝 Input Fields
+
+| Field | Type | Range / Example | Notes |
+|---|---|---|---|
+| Attendance | Number | 0–100 (%) | Percentage of classes attended |
+| Study Hours | Number | e.g. 0–10 (hrs/day) | Average daily study time |
+| Previous Scores | Number | 0–100 | Score from the last exam/assessment |
+| Assignment Completion | Number | 0–100 (%) | Percentage of assignments submitted |
+| Class Participation | Number | 0–10 (or similar scale) | Self-rated or recorded participation level |
+
+*(Adjust ranges above to match whatever scale your `generate_data.py`/form actually uses.)*
+
+## ⚠️ Limitations
+
+- Trained on a small, mostly synthetic dataset — predictions are for
+  **learning/demo purposes only**, not real academic decision-making.
+- Only considers 5 factors; real academic performance depends on many more
+  (health, home environment, teaching quality, etc.).
+- Decision Tree accuracy (~55–65%) is modest; results should be treated as
+  a rough indicator, not a guarantee.
+- No authentication, data persistence, or history tracking — each
+  prediction is a one-off, not saved anywhere.
+
+## 🚀 Future Improvements
+
+- [ ] Try other models (Random Forest, Logistic Regression) and compare accuracy
+- [ ] Add input validation on the form (e.g. block values outside 0–100)
+- [ ] Store past predictions in a small database (SQLite)
+- [ ] Add charts/visualizations showing which factors matter most
+  (feature importance)
+- [ ] Deploy the app online (e.g. Render, Railway, PythonAnywhere)
+- [ ] Add unit tests for `train_model.py` and `app.py`
+
+## 🐞 Troubleshooting
+
+| Problem | Likely Fix |
+|---|---|
+| `ModuleNotFoundError` | Run `pip install -r requirements.txt` again |
+| `model.pkl not found` | Run `python train_model.py` before `python app.py` |
+| Port 5000 already in use | Stop the other process, or run Flask on a different port |
+| Predictions look wrong/random | Re-run `generate_data.py` then `train_model.py` to refresh the model |
+
+## 🙏 Acknowledgments
+
+- Dataset: [Student Performance Factors](https://www.kaggle.com/datasets/lainguyn123/student-performance-factors) on Kaggle
+- Built with [scikit-learn](https://scikit-learn.org/) and [Flask](https://flask.palletsprojects.com/)
+
+## 📬 Contact
+
+For questions about this project, reach out to **Vinayak Pandey**
+(ABES Institute of Technology / Dr. A.P.J. Abdul Kalam Technical University).
