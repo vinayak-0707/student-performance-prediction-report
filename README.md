@@ -121,6 +121,17 @@ Is attendance above 70%?
 │         └── No  → predict "Good"
 └── No  → predict "Average" or "At-Risk"
 ```
+
+---
+The real tree the model learns is picked automatically from the training
+data (not written by hand) — `train_model.py` keeps it limited to 4
+questions deep (`max_depth=4`) so it stays simple enough to actually
+understand, rather than an unreadable maze of hundreds of rules.
+
+- **Model accuracy:** printed each time you run `train_model.py` — expect
+  roughly 55-65% on 4-class prediction (versus 25% for random guessing),
+  which is reasonable given only 5 simple input factors.
+
 ## 📷 Screenshots
 HOME PAGE
 <img width="1920" height="1009" alt="Screenshot (1)" src="https://github.com/user-attachments/assets/0d7fcc1f-d665-46ce-848d-f4d0ef87d012" />
@@ -132,16 +143,6 @@ RESULT
 <img width="1899" height="1017" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/f27180a1-c7cd-44cf-b976-e10ec20fe0a4" />
 
 
-
----
-The real tree the model learns is picked automatically from the training
-data (not written by hand) — `train_model.py` keeps it limited to 4
-questions deep (`max_depth=4`) so it stays simple enough to actually
-understand, rather than an unreadable maze of hundreds of rules.
-
-- **Model accuracy:** printed each time you run `train_model.py` — expect
-  roughly 55-65% on 4-class prediction (versus 25% for random guessing),
-  which is reasonable given only 5 simple input factors.
 
 ## 📝 Input Fields
 
