@@ -122,19 +122,16 @@ Is attendance above 70%?
 └── No  → predict "Average" or "At-Risk"
 ```
 ## 📷 Screenshots
-
-```
-screenshots/
-├── home
+HOME PAGE
 <img width="1920" height="1009" alt="Screenshot (1)" src="https://github.com/user-attachments/assets/0d7fcc1f-d665-46ce-848d-f4d0ef87d012" />
 
-├── prediction
+INPUT
 <img width="1917" height="1014" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/dba770e8-fd5c-4b58-a8e6-80cb36f63534" />
 
-└── result
+RESULT
 <img width="1899" height="1017" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/f27180a1-c7cd-44cf-b976-e10ec20fe0a4" />
 
-```
+
 
 ---
 The real tree the model learns is picked automatically from the training
